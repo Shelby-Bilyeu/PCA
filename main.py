@@ -23,9 +23,11 @@ df.plot(subplots=True,figsize=(12,6))
 df.plot(figsize=(12,2))
 
 pca = PCA()
-df.loc[:, '1'] = 0
+df.loc['3'] = 0
 df_pca = pca.fit_transform(df)
-pcaData = pd.DataFrame(df_pca)
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(df_pca)
+pcaData = pd.DataFrame(scaled_data)
 pcaData.plot(subplots=True,figsize=(12,6))
 pcaData.plot(figsize=(12,2))
 
