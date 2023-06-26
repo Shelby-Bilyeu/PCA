@@ -13,3 +13,11 @@ import seaborn as sns
 
 # import ecg data
 !wget -O data_ecg.xlsx https://github.com/Shelby-Bilyeu/PCA/blob/main/ecg_data.xlsx
+
+
+
+
+headers = ["1","2","3"]
+df = pd.read_excel('data_ecg.xlsx', names=headers, header=None)
+df.plot(subplots=True,figsize=(12,6))
+df.plot(figsize=(12,2))
